@@ -170,5 +170,52 @@
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   <script src="main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const GOOGLE_SHEET_URL = "PASTE_YOUR_WEB_APP_URL_HERE";
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.form-submit');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      const data = {
+        name: form.querySelector('[name="name"]')?.value || "",
+        phone: form.querySelector('[name="phone"]')?.value || "",
+        email: form.querySelector('[name="email"]')?.value || "",
+        service: "",
+        message: form.querySelector('[name="message"]')?.value || ""
+      };
+
+      try {
+        await fetch(GOOGLE_SHEET_URL, {
+          method: "POST",
+          body: JSON.stringify(data),
+          mode: "no-cors"
+        });
+        submitBtn.textContent = "Sent!";
+        submitBtn.style.background = "#10b981";
+        form.reset();
+        setTimeout(function() {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = "";
+          submitBtn.disabled = false;
+        }, 3000);
+      } catch (err) {
+        submitBtn.textContent = "Error - Try Again";
+        submitBtn.style.background = "#ef4444";
+        submitBtn.disabled = false;
+        setTimeout(function() {
+          submitBtn.innerHTML = originalText;
+          submitBtn.style.background = "";
+        }, 3000);
+      }
+    });
+  });
+  </script>
 </body>
 </html>

@@ -70,37 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---- Contact Form Handling ----
-  const contactForm = document.getElementById('contactForm');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const submitBtn = contactForm.querySelector('.form-submit');
-      const originalContent = submitBtn.textContent;
-
-      // Show sending state
-      submitBtn.textContent = 'SENDING...';
-      submitBtn.disabled = true;
-      submitBtn.style.opacity = '0.7';
-
-      // Simulate form submission
-      setTimeout(() => {
-        submitBtn.textContent = 'MESSAGE SENT!';
-        submitBtn.style.background = '#00D4AA';
-
-        // Reset after 3 seconds
-        setTimeout(() => {
-          submitBtn.textContent = originalContent;
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = '1';
-          submitBtn.style.background = '';
-          contactForm.reset();
-        }, 3000);
-      }, 1500);
-    });
-  }
+  // Contact form handling is in contact.html inline script (Google Sheets integration)
 
   // ---- Smooth Scroll for Anchor Links ----
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
