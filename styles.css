@@ -1,6 +1,6 @@
 /* ============================================
    MADISON TIRES & WHEELS — Master Stylesheet
-   Dark Industrial Theme with Orange Accent
+   Dark Industrial Theme with Blue Accent
    ============================================ */
 
 /* --- CSS Variables --- */
@@ -9,8 +9,8 @@
   --bg-card: #212121;
   --bg-elevated: #2D2D2D;
   --bg-placeholder: #3D3D3D;
-  --orange: #FF6B35;
-  --orange-hover: #E85A25;
+  --orange: #2B6CB5;
+  --orange-hover: #1E5A9E;
   --teal: #00D4AA;
   --white: #FFFFFF;
   --gray-light: #AAAAAA;
@@ -148,7 +148,7 @@ p {
 .btn--primary:hover {
   background: var(--orange-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8px 24px rgba(43, 108, 181, 0.3);
 }
 
 .btn--outline {
@@ -1677,7 +1677,7 @@ p {
 .services-jump-nav a:hover {
   color: var(--white);
   border-color: var(--orange);
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(43, 108, 181, 0.1);
 }
 
 /* --- Services Page: Section Dividers --- */
@@ -1865,8 +1865,8 @@ p {
   }
 
   @keyframes cta-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(255, 107, 53, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(43, 108, 181, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(43, 108, 181, 0); }
   }
 
   .services__grid,
