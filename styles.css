@@ -9,8 +9,8 @@
   --bg-card: #212121;
   --bg-elevated: #2D2D2D;
   --bg-placeholder: #3D3D3D;
-  --orange: #0055D4;
-  --orange-hover: #0044AA;
+  --orange: #4A90D9;
+  --orange-hover: #3B7DC4;
   --teal: #00D4AA;
   --white: #FFFFFF;
   --gray-light: #AAAAAA;
@@ -112,7 +112,7 @@ p {
 }
 
 .section--orange {
-  background: linear-gradient(135deg, #003DA5 0%, #0055D4 60%, #1A6FE8 100%);
+  background: linear-gradient(135deg, #3B7DC4 0%, #4A90D9 60%, #5EA3E6 100%);
   position: relative;
   overflow: hidden;
 }
@@ -178,7 +178,7 @@ p {
 .btn--primary:hover {
   background: var(--orange-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 85, 212, 0.3);
+  box-shadow: 0 8px 24px rgba(74, 144, 217, 0.3);
 }
 
 .btn--outline {
@@ -714,7 +714,7 @@ p {
 /* CTA primary button: solid white */
 .cta-section .btn--dark {
   background: var(--white);
-  color: #0055D4;
+  color: #3B7DC4;
   font-weight: 700;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
@@ -1737,7 +1737,7 @@ p {
 .services-jump-nav a:hover {
   color: var(--white);
   border-color: var(--orange);
-  background: rgba(0, 85, 212, 0.1);
+  background: rgba(74, 144, 217, 0.1);
 }
 
 /* --- Services Page: Section Dividers --- */
@@ -1925,8 +1925,8 @@ p {
   }
 
   @keyframes cta-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(0, 85, 212, 0.4); }
-    50% { box-shadow: 0 0 0 8px rgba(0, 85, 212, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 144, 217, 0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(74, 144, 217, 0); }
   }
 
   .services__grid,
