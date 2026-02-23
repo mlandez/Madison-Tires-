@@ -115,8 +115,6 @@ p {
   background: linear-gradient(135deg, #1E5A9E 0%, #3A8FD4 60%, #2E94B9 100%);
   position: relative;
   overflow: hidden;
-  clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
-  padding-top: 104px !important;
 }
 
 .section--orange::before {
@@ -691,6 +689,8 @@ p {
 .cta-section {
   text-align: center;
   padding: 80px 60px;
+  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  padding-top: 120px;
 }
 
 .cta-section h2 {
