@@ -689,7 +689,7 @@ p {
 .cta-section {
   text-align: center;
   padding: 80px 60px;
-  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 30px, 100% 0, 100% 100%, 0 100%);
   padding-top: 120px;
 }
 
