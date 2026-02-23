@@ -112,7 +112,39 @@ p {
 }
 
 .section--orange {
-  background: var(--orange);
+  background: linear-gradient(135deg, #1E5A9E 0%, #3A8FD4 60%, #2E94B9 100%);
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
+  padding-top: 104px !important;
+}
+
+.section--orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.03) 10px,
+      rgba(255,255,255,0.03) 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      rgba(255,255,255,0.02) 10px,
+      rgba(255,255,255,0.02) 12px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section--orange > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section--black {
@@ -662,29 +694,59 @@ p {
 }
 
 .cta-section h2 {
-  color: var(--black);
-  font-size: 3rem;
+  color: var(--white);
+  font-size: 2.75rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .cta-section p {
-  color: var(--black);
-  font-size: 0.9375rem;
-  margin-top: 12px;
+  color: rgba(255,255,255,0.9);
+  font-size: 1.0625rem;
+  margin-top: 8px;
+  line-height: 1.6;
 }
 
 .cta-section__buttons {
   display: flex;
   justify-content: center;
   gap: 16px;
-  margin-top: 50px;
+  margin-top: 36px;
+}
+
+/* CTA primary button: solid white */
+.cta-section .btn--dark {
+  background: var(--white);
+  color: #1E5A9E;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.cta-section .btn--dark:hover {
+  background: #f0f4f8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+}
+
+/* CTA secondary button: ghost/outline */
+.cta-section .btn--outline-dark {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.cta-section .btn--outline-dark:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+  color: var(--white);
 }
 
 /* ============================================
    FOOTER
    ============================================ */
 .footer {
-  background: var(--black);
+  background: #1a1a1a;
   padding: 60px 60px 32px;
+  border-top: 3px solid var(--orange);
 }
 
 .footer__top {
