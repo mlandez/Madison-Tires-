@@ -1873,9 +1873,12 @@ p {
 }
 
 /* --- Services Page: Scroll Offset for Anchors --- */
+#auto-repair,
 #tire-sales,
+#balancing,
+#tune-ups,
 #brake-repair,
-#tire-balancing,
+#shocks,
 #wheel-alignment {
   scroll-margin-top: 100px;
 }
@@ -1990,6 +1993,10 @@ p {
     padding: 20px 40px 40px;
   }
 
+  .hero__content {
+    gap: 28px;
+  }
+
   .contact-info {
     width: 100%;
   }
@@ -2013,11 +2020,16 @@ p {
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
+  h1 { font-size: clamp(28px, 7vw, 48px); }
+  h2 { font-size: clamp(22px, 5.5vw, 36px); }
 
-  .hero__title { font-size: 2.5rem; }
-  .page-hero h1 { font-size: 2.5rem; }
+  .hero__title { font-size: clamp(28px, 7vw, 48px); }
+  .page-hero h1 { font-size: clamp(28px, 7vw, 48px); }
+
+  .hero__subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
 
   .navbar__links,
   .navbar__cta {
@@ -2039,6 +2051,7 @@ p {
     padding: 24px;
     gap: 20px;
     border-bottom: 1px solid var(--bg-elevated);
+    z-index: 999;
   }
 
   .navbar__cta.mobile-show {
@@ -2046,7 +2059,10 @@ p {
     justify-content: center;
   }
 
-  .services__grid,
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
   .testimonials__grid,
   .values__grid,
   .blog-grid__posts {
@@ -2067,40 +2083,104 @@ p {
     width: 45%;
   }
 
+  /* Hero buttons stack vertically and fill width */
   .hero__buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero__buttons .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Hero badge spacing */
+  .hero__badge {
+    margin-bottom: 4px;
+  }
+
+  /* Hero content padding so text doesn't touch edges */
+  .hero {
+    padding: 40px 20px 0;
+  }
+
+  .hero__content {
+    gap: 24px;
   }
 
   .section {
-    padding: 48px 24px;
+    padding: 48px 20px;
   }
 
   .page-hero {
-    padding: 48px 24px 32px;
+    padding: 48px 20px 32px;
   }
 
   .contact-body {
-    padding: 12px 24px 24px;
+    padding: 12px 20px 24px;
   }
 
+  /* Footer mobile layout */
   .footer {
-    padding: 40px 24px 24px;
+    padding: 40px 20px 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
   }
 
   .footer__top {
     flex-direction: column;
-    gap: 32px;
+    gap: 0;
+  }
+
+  .footer__brand {
+    max-width: none;
+    margin-bottom: 32px;
+  }
+
+  .footer__col {
+    margin-bottom: 32px;
+  }
+
+  .footer__col:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer__col ul {
+    gap: 0;
+  }
+
+  .footer__col ul li a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .footer__col .highlight {
+    margin-top: 8px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 
   .stats-bar {
     flex-wrap: wrap;
     gap: 32px;
-    padding: 40px 24px;
+    padding: 40px 20px;
   }
 
   .stats-bar__item {
     width: 45%;
+  }
+
+  .cta-section {
+    padding: 60px 20px;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(22px, 5.5vw, 36px);
   }
 
   .cta-section__buttons {
@@ -2111,5 +2191,75 @@ p {
   .cta-section__buttons .btn {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Map */
+  .map-section {
+    padding: 32px 20px;
+  }
+
+  /* Blog featured article */
+  .featured-article__content h2 {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  /* Service detail buttons full width */
+  .service-detail__content .btn {
+    align-self: stretch;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Services jump nav */
+  .services-jump-nav {
+    padding: 20px;
+  }
+
+  /* Ensure service cards show 2-up on tablets in portrait */
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Extra small screens (iPhone SE, 375px) */
+@media (max-width: 400px) {
+  .hero {
+    padding: 32px 16px 0;
+  }
+
+  .section {
+    padding: 40px 16px;
+  }
+
+  .page-hero {
+    padding: 40px 16px 28px;
+  }
+
+  .footer {
+    padding: 32px 16px 20px;
+  }
+
+  .navbar {
+    padding: 0 16px;
+  }
+
+  .navbar__logo-img {
+    height: 50px;
+  }
+
+  .trust-bar {
+    padding: 20px 16px;
+  }
+
+  .contact-body {
+    padding: 12px 16px 24px;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .cta-section {
+    padding: 48px 16px;
   }
 }
