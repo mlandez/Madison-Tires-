@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.setAttribute('data-lucide', 'menu'); lucide.createIcons();
       });
     });
+
+    // Close menu when tapping the overlay background
+    navLinks.addEventListener('click', (e) => {
+      if (e.target === navLinks) {
+        navLinks.classList.remove('open');
+        if (navCta) navCta.classList.remove('mobile-show');
+        const icon = mobileToggle.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu'); lucide.createIcons();
+      }
+    });
   }
 
   // ---- Scroll Animations (Intersection Observer) ----
