@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "madison-tires.vercel.app"
+        }
+      ],
+      "destination": "https://madisonavenuetiresandwheels.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -9,6 +20,17 @@
         }
       ],
       "destination": "https://madisonavenuetiresandwheels.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madisonavenuetiresandwheels.com"
+        }
+      ],
+      "destination": "https://madisonavenuetiresandwheels.com/",
       "permanent": true
     },
     {
