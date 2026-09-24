@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://madison-tires.vercel.app/sitemap.xml
+Sitemap: https://madisonavenuetiresandwheels.com/sitemap.xml
